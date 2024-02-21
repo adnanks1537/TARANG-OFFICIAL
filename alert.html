@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Alert Box</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: bisque;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .custom-alert h2 {
+            color: #333;
+        }
+
+        .custom-alert-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-steps-container">
+        <h2>Registration Steps</h2>
+        <ol>
+            <li>Step 1: Pay online using the UPI button.</li>
+            <li>
+                Step 2: Proceed to the Spot Registration page.
+                <ul>
+                    <li>Upload the payment receipt using the provided file upload option.</li>
+                </ul>
+            </li>
+            <li>Step 3: After completing Spot Registration, navigate to the Event Registration page for further details.</li>
+        </ol>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Registration steps data
+            const registrationSteps = [
+                "Pay online using the UPI button.",
+                "Proceed to the Spot Registration page and upload the payment receipt using the provided file upload option.",
+                "After completing Spot Registration, navigate to the Event Registration page for further details."
+            ];
+
+            // Get the container to append the steps
+            const container = document.getElementById('registration-steps-container');
+
+            // Create an ordered list
+            const ol = document.createElement('ol');
+
+            // Populate the ordered list with registration steps
+            registrationSteps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                ol.appendChild(li);
+            });
+
+            // Append the ordered list to the container
+            container.appendChild(ol);
+        });
+    </script>
+
+</body>
+</html>
